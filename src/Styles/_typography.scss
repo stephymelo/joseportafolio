@@ -1,19 +1,32 @@
-@font-face{
-    font-family: FacundoRegular,sans-serif;
-    src:  url('../Resources/Fonts/Facundo-Regular.ttf');
-    
 
+
+h1{
+    font-size:30px;
+    color:white;
+    font-family: 'Facundo-Bold',sans-serif;
 }
-
-@font-face{
-    font-family: FacundoBold,sans-serif;
-    src:  url('../Resources/Fonts/Facundo-Bold.ttf');
-    
-
-}
-
 h2{
     color:red;
     
 }
+h3{
+    color:white;
+    font-size:16px;
+    font-family: 'Facundo-Regular',sans-serif;
 
+}
+
+
+a{
+    color:white;
+    font-family: 'Facundo-Regular',sans-serif;
+
+}
+
+p{
+    color:white;
+    font-size:15px;
+    font-family: 'Facundo-Regular',sans-serif;
+    line-height: 30px;
+
+}

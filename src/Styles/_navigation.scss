@@ -1,4 +1,63 @@
-li{
-    color:$secondary;
-    font-family: 'FacundoRegular',sans-serif;
+ul {
+    margin-top: 2em;
+    margin-left: 2em;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 1;
+}
+
+li {
+    cursor:pointer;
+    margin-left: 40px;
+    font-family: "Facundo-Regular", sans-serif;
+    transition: background-position-x 0.9s;
+    position: relative;
+    :after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: $secondary;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    :hover:after {
+        width: 100%;
+        left: 0;
+        
+    }
+
+    a {
+        font-size: 16px;
+        color: white;
+        transition: all 0.45s;
+
+        :visited{
+            color: $secondary;
+
+        }
+
+        
+    }
+
+//     &:hover {
+//         background-image: url("../Resources/Icons/decor.svg");
+//         animation: line 1s;
+//     }
+
+    &:hover a {
+        color: $secondary;
+    }
+    
+// }
+
+// @keyframes line {
+//     0% {
+//         background-position-x: 390px;
+//     }
+// }
 }

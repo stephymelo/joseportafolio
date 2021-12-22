@@ -2,17 +2,48 @@
 @import './typography';
 @import './colors';
 @import './navigation';
+@import './elements';
+
+@import './Components/banner';
+@import './Components/about';
 
 @font-face{
-    font-family: FacundoRegular,sans-serif;
+    font-family: Facundo-Regular;
     src:  url('../Resources/Fonts/Facundo-Regular.ttf');
     
 
 }
 
+html {
+    scroll-behavior: smooth;
+    transition: 5s ease;
+    transform:10s ease;
+  }
 @font-face{
-    font-family: FacundoBold,sans-serif;
+    font-family: Facundo-Bold;
     src:  url('../Resources/Fonts/Facundo-Bold.ttf');
     
 
 }
+
+
+#app {
+    font-family: FacundoRegular,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    
+  }
+
+  .app{
+      width: 100%;
+
+  }
+  
+
+  @media screen and (max-width:480px) {
+  
+  
+  }

@@ -1,0 +1,62 @@
+.banner {
+    width: 100%;
+    min-height: 150vh;
+    max-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../Resources/Images/bannerbg.png");
+    background-size: cover;
+    
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+
+        .pseudoname {
+            margin-top: 2rem;
+        }
+
+        .icons {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 2rem;
+
+            &--1 {
+                margin-right: 0.8rem;
+
+             
+            }
+
+            &--2 {
+             
+            }
+        }
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+
+        .namebox {
+            border-color: white;
+            border-width: 2px;
+            padding: 0.5rem;
+            padding-top: 1rem;
+            border-style: solid;
+            width: max-content;
+        }
+
+        .lastname {
+            padding-top: 1rem;
+            padding-left: 0.7rem;
+        }
+    }
+}
