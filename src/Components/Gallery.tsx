@@ -8,15 +8,10 @@ interface GalleryProps {
 
 
 export const Gallery: React.FC<GalleryProps> = ({ list }) => {
-    // const id = useIdParam();
-    // const elem = useGetElemByIdParam(list);
-    
+ 
     return (
         <div>
 
-            {/* <ProjectElem id={id} title={title} url={url} description={description}>
-                
-            </ProjectElem> */}
 
         </div>
     );

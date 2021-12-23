@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -23,40 +23,38 @@ function App() {
 
 
   const [newArray, setNewArray] = useState<ProjectProp[]>([]);
+
+
+
+  const projectsRef = ref(db, '/project');
+  let list: ProjectProp[] = [];
+
+  onValue(projectsRef, (snapshot) => {
+
+
+    snapshot.forEach(function (data) {
+      const item = {
+        id: data.key, // id del objeto
+        // id:Math.random().toString(),
+        title: data.val().title as string,
+        description: data.val().description as string,
+        url: data.val().url as string,
+      }
+      
+      list.push(item);
+      console.log(list);
+      /*  if(data.key != item.id){
+         list.push(item);
+        }  */
+
+    });
+
+  }, { onlyOnce: true });
+
+
+
   
 
-  const info = () => {
-    const projectsRef =  ref(db, '/project');
-    let list: ProjectProp[] = [];
-    return new Promise((resolve, reject) => {
-      onValue(projectsRef, (snapshot) => {
-        if (snapshot.val() == null) {
-          reject(null);
-        } else {
-          snapshot.forEach(function (data) {
-            const item = {
-              id: data.key, // id del objeto
-              // id:Math.random().toString(),
-              title: data.val().title as string,
-              description: data.val().description as string,
-              url: data.val().url as string,
-            }
-            list.push(item);
-            /*  if(data.key != item.id){
-               list.push(item);
-              }  */
-            resolve(list);
-          });
-        }
-      }, { onlyOnce: true });
-    })
-  }
-
-
-
-  // info().then(list => {
-  //   setNewArray(list as ProjectProp[]);
-  // })
 
 
   //setNewArray(list)
@@ -124,15 +122,9 @@ function App() {
       <HashRouter>
         {/* <button onClick={handleAdmin}></button> */}
         <Link className='hiddenLogin' to={"login"}><button className='hiddenLoginBtn'>Login</button></Link>
-
-
-
         <Routes>
-
-
           <Route path='' element={
             <>
-
               <Navigation />
               <Banner />
               <About />
