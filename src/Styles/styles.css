@@ -152,6 +152,10 @@ li:hover a {
   font-size: 20px;
 }
 
+.projectElem {
+  height: 300px;
+}
+
 .banner {
   width: 100%;
   min-height: 150vh;
@@ -372,6 +376,8 @@ html {
   transition: 5s ease;
   -webkit-transform: 10s ease;
           transform: 10s ease;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -380,7 +386,7 @@ html {
 }
 
 #app {
-  font-family: FacundoRegular,sans-serif;
+  font-family: FacundoRegular, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
