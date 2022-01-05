@@ -17,43 +17,18 @@ import { Gallery } from './Components/Gallery';
 import { onValue, ref } from '@firebase/database';
 import { db } from './Utils/ApiFirebase';
 import { ProjectProp } from './Utils/ProjectProp';
+import  Database from './Utils/Database';
 
 
 function App() {
 
+  console.log(Database);
+
 
   const [newArray, setNewArray] = useState<ProjectProp[]>([]);
 
+  // setNewArray(Database);
 
-
-  const projectsRef = ref(db, '/project');
-  let list: ProjectProp[] = [];
-
-  onValue(projectsRef, (snapshot) => {
-
-
-    snapshot.forEach(function (data) {
-      const item = {
-        id: data.key, // id del objeto
-        // id:Math.random().toString(),
-        title: data.val().title as string,
-        description: data.val().description as string,
-        url: data.val().url as string,
-      }
-      
-      list.push(item);
-      console.log(list);
-      /*  if(data.key != item.id){
-         list.push(item);
-        }  */
-
-    });
-
-  }, { onlyOnce: true });
-
-
-
-  
 
 
 
@@ -70,7 +45,6 @@ function App() {
   // ])
 
 
-  const [projectElems, setProjectElems] = React.useState(newArray);
 
   // const [projectElems, setProjectElems] = useState<ProjectProp[]>(newArray) ;
 
@@ -129,7 +103,7 @@ function App() {
               <Banner />
               <About />
 
-              {projectElems.map((elem) => {
+              {newArray.map((elem) => {
                 return <ProjectElem key={elem.id} {...elem}
                 />;
               })}
