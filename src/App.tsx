@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -14,22 +14,50 @@ import Login from './Editor/Login';
 import './Styles/styles.css';
 import ProjectElem from './Utils/ProjectElem';
 import { Gallery } from './Components/Gallery';
-import { onValue, ref } from '@firebase/database';
-import { db } from './Utils/ApiFirebase';
 import { ProjectProp } from './Utils/ProjectProp';
 import  Database from './Utils/Database';
+import { onValue, ref } from '@firebase/database';
+import { db } from './Utils/ApiFirebase';
+
 
 
 function App() {
 
   console.log(Database);
 
+  
+
 
   const [newArray, setNewArray] = useState<ProjectProp[]>([]);
 
   // setNewArray(Database);
 
+  useEffect(() => {
+    const getData = async () => {
+      const projectsRef = ref(db, '/project');
+      let lista:  ProjectProp[] = [];
+      onValue(projectsRef, (snapshot) => {
+        snapshot.forEach( child => {
+          const item = {
+            id: child.key, // id del objeto
+            // id:Math.random().toString(),
+            title: child.val().title as string,
+            description: child.val().description as string,
+            url: child.val().url as string,
+          }
+          lista.push(item);
 
+        });
+        setNewArray(lista);
+
+    });
+
+    return lista;
+
+  }
+
+  getData();
+  }, []);
 
 
   //setNewArray(list)
@@ -47,26 +75,6 @@ function App() {
 
 
   // const [projectElems, setProjectElems] = useState<ProjectProp[]>(newArray) ;
-
-
-
-
-
-
-
-
-
-
-
-  // const starCountRef = ref(db,'/project');
-  // onValue(starCountRef, (snapshot) => {
-  //     const title = snapshot.val().key;
-  //     console.log("titleproject"+title);
-
-  //   });
-
-
-
 
 
 
@@ -92,7 +100,6 @@ function App() {
 
 
 
-
       <HashRouter>
         {/* <button onClick={handleAdmin}></button> */}
         <Link className='hiddenLogin' to={"login"}><button className='hiddenLoginBtn'>Login</button></Link>
@@ -103,11 +110,13 @@ function App() {
               <Banner />
               <About />
 
+
+
+
               {newArray.map((elem) => {
                 return <ProjectElem key={elem.id} {...elem}
                 />;
               })}
-
 
               {/* <Gallery
                 list={ProjectElem}
