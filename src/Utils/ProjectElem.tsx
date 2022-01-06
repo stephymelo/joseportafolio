@@ -9,7 +9,7 @@ export type ProjectElemProp = ProjectProp & {
 
 const ProjectElem: React.FC<ProjectElemProp> = ({ id, title, url, description }) => {
 
-   
+   console.log(id);
       
     return (
         <section className='projectElem'>
