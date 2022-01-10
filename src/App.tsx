@@ -15,9 +15,10 @@ import './Styles/styles.css';
 import ProjectElem from './Utils/ProjectElem';
 import { Gallery } from './Components/Gallery';
 import { ProjectProp } from './Utils/ProjectProp';
-import  Database from './Utils/Database';
+import Database from './Utils/Database';
 import { onValue, ref } from '@firebase/database';
 import { db } from './Utils/ApiFirebase';
+import { Work } from './Components/Work';
 
 
 
@@ -25,39 +26,8 @@ function App() {
 
   console.log(Database);
 
-  
 
 
-  const [newArray, setNewArray] = useState<ProjectProp[]>([]);
-
-  // setNewArray(Database);
-
-  useEffect(() => {
-    const getData = async () => {
-      const projectsRef = ref(db, '/project');
-      let lista:  ProjectProp[] = [];
-      onValue(projectsRef, (snapshot) => {
-        snapshot.forEach( child => {
-          const item = {
-            id: child.key, // id del objeto
-            // id:Math.random().toString(),
-            title: child.val().title as string,
-            description: child.val().description as string,
-            url: child.val().url as string,
-          }
-          lista.push(item);
-
-        });
-        setNewArray(lista);
-
-    });
-
-    return lista;
-
-  }
-
-  getData();
-  }, []);
 
 
   //setNewArray(list)
@@ -109,14 +79,10 @@ function App() {
               <Navigation />
               <Banner />
               <About />
+              <Work />
 
 
 
-
-              {newArray.map((elem) => {
-                return <ProjectElem key={elem.id} {...elem}
-                />;
-              })}
 
               {/* <Gallery
                 list={ProjectElem}

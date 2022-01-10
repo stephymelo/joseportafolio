@@ -36,28 +36,9 @@ li {
         color: white;
         transition: all 0.45s;
 
-        :visited{
-            color: $secondary;
-
-        }
-
-        
+          
     }
-
-//     &:hover {
-//         background-image: url("../Resources/Icons/decor.svg");
-//         animation: line 1s;
-//     }
-
     &:hover a {
         color: $secondary;
     }
-    
-// }
-
-// @keyframes line {
-//     0% {
-//         background-position-x: 390px;
-//     }
-// }
 }

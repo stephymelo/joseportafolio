@@ -60,13 +60,22 @@ h1 {
 }
 
 h2 {
-  color: red;
+  color: white;
+  font-size: 40px;
+  letter-spacing: 7px;
+  font-family: 'Facundo-Regular',sans-serif;
 }
 
 h3 {
   color: white;
   font-size: 16px;
   font-family: 'Facundo-Regular',sans-serif;
+}
+
+h4 {
+  color: white;
+  font-size: 16px;
+  font-family: 'Facundo-Bold',sans-serif;
 }
 
 a {
@@ -130,10 +139,6 @@ li a {
   transition: all 0.45s;
 }
 
-li a :visited {
-  color: #3E5AFF;
-}
-
 li:hover a {
   color: #3E5AFF;
 }
@@ -163,7 +168,7 @@ li:hover a {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../Resources/Images/bannerbg.png");
+  background-image: url("../Resources/Images/joseBannerEdit.png");
   background-size: cover;
 }
 
@@ -363,6 +368,92 @@ li:hover a {
       -ms-flex-pack: baseline;
           justify-content: baseline;
   position: absolute;
+}
+
+.work {
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../Resources/Images/workBg.png");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.work__titles {
+  margin-top: 40em;
+  margin-left: 4em;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.work__titles .title {
+  font-size: 50px;
+  color: lightgray;
+}
+
+.work__titles .subtitle {
+  font-size: 70px;
+  -webkit-text-fill-color: rgba(255, 0, 0, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #3E5AFF;
+  letter-spacing: 5px;
+}
+
+.work__carousel {
+  margin-top: 15em;
+  margin-left: 1em;
+  height: 100%;
+  width: 70%;
+}
+
+.work__carousel .projectElem {
+  padding-left: 2em;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.work__carousel .projectElem__article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.work__carousel .projectElem__article--1 {
+  width: 50%;
+  height: 400px;
+}
+
+.work__carousel .projectElem__article--2 {
+  width: 40%;
+  margin-left: 2em;
+}
+
+.work__carousel .projectElem__description {
+  margin-top: 2em;
+  padding: 1em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+.work__carousel :after {
+  background: transparent;
 }
 
 @font-face {
