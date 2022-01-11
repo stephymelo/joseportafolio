@@ -18,7 +18,7 @@ const ProjectElem: React.FC<ProjectElemProp> = ({ id, title, url, description, c
             <article className='projectElem__article'>
            
                 <article className='projectElem__article--1'>
-                    <ReactPlayer  width='100%' height='100%' url={url} controls={true} light={cover} /> 
+                    <ReactPlayer width='100%' height='100%' url={url} controls={true} light={cover} /> 
                 </article>
 
                 <article className='projectElem__article--2'>

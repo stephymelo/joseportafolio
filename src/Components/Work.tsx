@@ -1,16 +1,19 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, CSSProperties } from 'react';
 import { ProjectProp } from '../Utils/ProjectProp';
-import Database from '../Utils/Database';
 import { onValue, ref } from '@firebase/database';
 import { db } from '../Utils/ApiFirebase';
 import ProjectElem from '../Utils/ProjectElem';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import arrowLeft from "../Resources/Icons/arrowLeft.png"
+import arrowRight from "../Resources/Icons/arrowRight.png"
 
 interface Work {
 }
 
 export const Work: React.FC<Work> = () => {
+
+
 
 
 
@@ -48,6 +51,33 @@ export const Work: React.FC<Work> = () => {
     }, []);
 
 
+
+    const indicatorStyles: CSSProperties = {
+        display: 'none',
+        
+    };
+
+    const arrowStyleL: CSSProperties = {
+        display: 'none',
+        margin: '0 80 0 0px',
+        position: 'absolute',
+        zIndex: 2,
+        top: 'calc(50% - 15px)',
+        width: 50,
+        height: 50,
+        cursor: 'pointer',
+    };
+    const arrowStyleR: CSSProperties = {
+        
+        padding: '0 0 0 10px',
+        position: 'absolute',
+        zIndex: 2,
+        top: 'calc(40% - 15px)',
+        width: 50,
+        height: 50,
+        cursor: 'pointer',
+    };
+
     return (
         <section className='work'>
 
@@ -57,7 +87,35 @@ export const Work: React.FC<Work> = () => {
             </article>
 
 
-            <Carousel infiniteLoop={true} dynamicHeight={true} showThumbs={false} className='work__carousel' >
+            <Carousel infiniteLoop={true} dynamicHeight={true} showThumbs={false} className='work__carousel'
+                renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                    hasPrev && (
+                        <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>
+                            <img src={arrowLeft} />
+                        </button>
+                    )
+                }
+
+                renderArrowNext={(onClickHandler, hasPrev, label) =>
+                    hasPrev && (
+                        <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleR, right: 15 }}>
+                            <img src={arrowRight} />
+                        </button>
+                    )
+                }
+
+                renderIndicator={() => {
+                    return (
+                        <li
+                            style={indicatorStyles}
+                        />
+                    );
+                }}
+
+                
+
+
+            >
                 {newArray.map((elem) => {
                     return <ProjectElem key={elem.id} {...elem}
                     />;

@@ -388,7 +388,7 @@ li:hover a {
 }
 
 .work__titles {
-  margin-top: 40em;
+  margin-top: 45em;
   margin-left: 4em;
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
@@ -402,6 +402,7 @@ li:hover a {
 }
 
 .work__titles .subtitle {
+  margin-top: 0.3em;
   font-size: 70px;
   -webkit-text-fill-color: rgba(255, 0, 0, 0);
   -webkit-text-stroke-width: 1px;
@@ -410,14 +411,24 @@ li:hover a {
 }
 
 .work__carousel {
-  margin-top: 15em;
-  margin-left: 1em;
+  margin-top: 16em;
+  margin-left: -3em;
+  margin-right: 6em;
   height: 100%;
   width: 70%;
 }
 
+.work__carousel .arrowCarrousel {
+  background-color: transparent;
+  border-style: none;
+}
+
+.work__carousel .carousel-status {
+  display: none;
+}
+
 .work__carousel .projectElem {
-  padding-left: 2em;
+  padding-left: 1em;
   width: 100%;
   height: 100%;
   color: white;
@@ -435,13 +446,17 @@ li:hover a {
 }
 
 .work__carousel .projectElem__article--1 {
+  padding-bottom: 2em;
   width: 50%;
   height: 400px;
+  -webkit-filter: drop-shadow(0.6em 0.3em 10px #3e3e99);
+          filter: drop-shadow(0.6em 0.3em 10px #3e3e99);
 }
 
 .work__carousel .projectElem__article--2 {
-  width: 40%;
-  margin-left: 2em;
+  width: 35%;
+  margin-top: 4.3em;
+  margin-left: 3.2em;
 }
 
 .work__carousel .projectElem__description {
