@@ -19,6 +19,7 @@ import Database from './Utils/Database';
 import { onValue, ref } from '@firebase/database';
 import { db } from './Utils/ApiFirebase';
 import { Work } from './Components/Work';
+import { Contact } from './Components/Contact';
 
 
 
@@ -80,6 +81,7 @@ function App() {
               <Banner />
               <About />
               <Work />
+              <Contact/>
 
 
 
