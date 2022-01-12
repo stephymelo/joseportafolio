@@ -1,0 +1,114 @@
+.work {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../Resources/Images/workBg.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+
+    &__titles {
+        width: 40%;
+        margin-top: 45em;
+        margin-left: 4em;
+        transform-origin: 0 0;
+        transform: rotate(-90deg);
+
+        .title {
+            font-size: 50px;
+            color: rgb(211, 211, 211);
+        }
+
+        .subtitle {
+            margin-top: 0.3em;
+            font-size: 70px;
+            -webkit-text-fill-color: rgba(255, 0, 0, 0);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $secondary;
+            letter-spacing: 5px;
+        }
+    }
+
+    &__titlesSpanish {
+        width: 40%;
+        margin-top: 45em;
+        margin-left: 3.5em;
+        transform-origin: 0 0;
+        transform: rotate(-90deg);
+
+        .titleS {
+            font-size: 45px;
+            color: rgb(211, 211, 211);
+        }
+
+        .subtitleS {
+            margin-top: 0.3em;
+            font-size: 60px;
+            -webkit-text-fill-color: rgba(255, 0, 0, 0);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $secondary;
+            letter-spacing: 5px;
+        }
+    }
+
+    /////
+
+    &__carousel {
+        margin-top: 16em;
+        margin-left: -3em;
+        margin-right: 6em;
+        height: 100%;
+        width: 70%;
+
+        .arrowCarrousel {
+            background-color: transparent;
+            border-style: none;
+        }
+
+        .carousel-status {
+            display: none;
+        }
+
+        .projectElem {
+            padding-left: 1em;
+            width: 100%;
+            height: 100%;
+            color: white;
+            display: flex;
+
+            &__article {
+                display: flex;
+                width: 100%;
+                height: 100%;
+
+                &--1 {
+                    padding-bottom: 2em;
+                    width: 50%;
+                    height: 400px;
+                    filter: drop-shadow(0.6em 0.3em 10px rgb(62, 62, 153));
+                }
+
+                &--2 {
+                    width: 35%;
+                    margin-top: 4.3em;
+                    margin-left: 3em;
+                   
+                }
+            }
+
+            &__description {
+                margin-top: 2em;
+                padding: 1em;
+                border-width: 1px;
+                border-style: solid;
+                border-color: white;
+            }
+        }
+
+        :after {
+            background: transparent;
+        }
+    }
+}
