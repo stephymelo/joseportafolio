@@ -3,11 +3,12 @@ import { ProjectProp } from './ProjectProp';
 import ReactPlayer from 'react-player';
 
 export type ProjectElemProp = ProjectProp & {
+    type: 'english' | 'spanish';
 }
 
 
 
-const ProjectElem: React.FC<ProjectElemProp> = ({ id, title, url, description, cover }) => {
+const ProjectElem: React.FC<ProjectElemProp> = ({ id, title, url, description,descripSpanish, cover,type }) => {
 
     let width = "100%";
     let height = "100%";
@@ -33,7 +34,8 @@ const ProjectElem: React.FC<ProjectElemProp> = ({ id, title, url, description, c
 
                 <article className='projectElem__article--2'>
                     <h4 className='projectElem__title'>{title}</h4>
-                    <p className='projectElem__description'>{description}</p>
+                    {type ==='english' &&<p className='projectElem__description'>{description}</p>}
+                    {type ==='spanish' &&<p className='projectElem__description'>{descripSpanish}</p>}
                 </article>
             </article>
 

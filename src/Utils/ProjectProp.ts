@@ -3,6 +3,7 @@ export type ProjectProp = {
     title:string;
     url:string;
     description:string;
+    descripSpanish:string;
     cover:string;
 
 

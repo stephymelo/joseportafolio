@@ -7,14 +7,14 @@ interface Language {
 
 export const Language: React.FC<Language> = ({type, onEditLan}) => {
 
+
     const handleLanguageSpanish: React.MouseEventHandler<HTMLButtonElement> = () => {
         if (type === "english" && onEditLan) {
             type = "spanish";
             onEditLan(type);
+            
         }
-      
         
-
     }
     const handleLanguageEnglish: React.MouseEventHandler<HTMLButtonElement> = () => {
         if (type === "spanish" && onEditLan) {
@@ -26,8 +26,8 @@ export const Language: React.FC<Language> = ({type, onEditLan}) => {
     }
     return (
         <section className='language'>
-            <button onClick={handleLanguageSpanish}>Spanish</button>
-            <button onClick={handleLanguageEnglish}>English</button>
+            {type==='english'&&<button className='language__button' onClick={handleLanguageSpanish}>ENG</button>}
+            {type==='spanish'&&<button className='language__button2' onClick={handleLanguageEnglish}>ESP</button>}
         </section>
     );
 }

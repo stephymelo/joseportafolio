@@ -9,12 +9,10 @@ import arrowLeft from "../Resources/Icons/arrowLeft.png"
 import arrowRight from "../Resources/Icons/arrowRight.png"
 
 interface Work {
+    type: 'english' | 'spanish';
 }
 
-export const Work: React.FC<Work> = () => {
-
-
-
+export const Work: React.FC<Work> = ({ type }) => {
 
 
 
@@ -35,6 +33,7 @@ export const Work: React.FC<Work> = () => {
                         // id:Math.random().toString(),
                         title: child.val().title as string,
                         description: child.val().description as string,
+                        descripSpanish: child.val().descripSpanish as string,
                         url: child.val().url as string,
                         cover: child.val().cover as string,
                     }
@@ -54,22 +53,23 @@ export const Work: React.FC<Work> = () => {
 
 
     const arrowStyleL: CSSProperties = {
-       
-       
+
+
         margin: '0 80 0 0px',
         position: 'absolute',
         zIndex: 2,
-        top: 'calc(50% - 15px)',
+        top: 'calc(40% - 15px)',
         width: 50,
         height: 50,
         cursor: 'pointer',
     };
     const arrowStyleR: CSSProperties = {
-        
+
         padding: '0 0 0 10px',
         position: 'absolute',
         zIndex: 2,
         top: 'calc(40% - 15px)',
+        left: 'calc(92% - 15px)',
         width: 50,
         height: 50,
         cursor: 'pointer',
@@ -78,13 +78,18 @@ export const Work: React.FC<Work> = () => {
     return (
         <section className='work'>
 
-            <article className='work__titles'>
+            {type === 'english' && <article className='work__titles'>
                 <h2 className='title'>WORK</h2>
                 <h1 className='subtitle'>PROJECTS</h1>
-            </article>
+            </article>}
+
+            {type === 'spanish' && <article className='work__titlesSpanish'>
+                <h2 className='titleS'>TRABAJO</h2>
+                <h1 className='subtitleS'>PROYECTOS</h1>
+            </article>}
 
 
-            <Carousel infiniteLoop={false} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false}  className='work__carousel'
+            {type === 'english' && <Carousel infiniteLoop={false} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false} className='work__carousel'
                 renderArrowPrev={(onClickHandler, hasPrev, label) =>
                     hasPrev && (
                         <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>
@@ -102,10 +107,34 @@ export const Work: React.FC<Work> = () => {
                 }
             >
                 {newArray.map((elem) => {
-                    return <ProjectElem key={elem.id} {...elem}
-                    />;
+                    return <ProjectElem type={'english'} key={elem.id} {...elem} />;
                 })}
-            </Carousel>
+            </Carousel>}
+
+
+            {/* SPANISH CAROUSEL */}
+
+            {type === 'spanish' && <Carousel infiniteLoop={false} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false} className='work__carousel'
+                renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                    hasPrev && (
+                        <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>
+                            <img src={arrowLeft} />
+                        </button>
+                    )
+                }
+
+                renderArrowNext={(onClickHandler, hasPrev, label) =>
+                    hasPrev && (
+                        <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleR, right: 15 }}>
+                            <img src={arrowRight} />
+                        </button>
+                    )
+                }
+            >
+                {newArray.map((elem) => {
+                    return <ProjectElem type={'spanish'} key={elem.id} {...elem} />;
+                })}
+            </Carousel>}
 
 
         </section>
