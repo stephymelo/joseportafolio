@@ -2,15 +2,16 @@ import * as React from 'react';
 import jose from "../Resources/Images/joseEdit.png"
 
 interface About {
+    type: 'english' | 'spanish';
 }
 
-export const About: React.FC<About> = () => {
+export const About: React.FC<About> = ({type}) => {
     return (
         <section id="about" className='about'>
 
 
 
-            <article className="about__info">
+            {type === 'english' && <article className="about__info">
                 <div className='about__info__title'>
                     <h1 className='name'>MUSIC PRODUCER</h1>
                     <div className='title2'>
@@ -19,13 +20,32 @@ export const About: React.FC<About> = () => {
                     </div>
                 </div>
 
-                <h3>José Miguel Tamayo, 21 years old, Colombian</h3>
+                <h3>José Miguel Tamayo, Colombian</h3>
                 <div className='about__info__bio'>
-                <p>I have more than 11 years of experience as a solo singer and as member of choral ensembles, participating in events such as the Bandola festival in Sevilla, “Antioquia le canta a Colombia” festival, the Javeriana Choir Festival, among others.
-                </p>
+                    <p>I have more than 11 years of experience as a solo singer and as member of choral ensembles, participating in events such as the Bandola festival in Sevilla, “Antioquia le canta a Colombia” festival, the Javeriana Choir Festival, among others.
+                    </p>
                 </div>
 
-            </article>
+            </article> }
+
+            {type === 'spanish' && <article className="about__info">
+                <div className='about__info__title'>
+                    <h1 className='name'>PRODUCTOR MUSICAL</h1>
+                    <div className='title2'>
+                        <h1 className='and'>&amp;</h1>
+                        <h1 className='composer'>COMPOSITOR</h1>
+                    </div>
+                </div>
+
+                <h3>José Miguel Tamayo, Colombiano</h3>
+                <div className='about__info__bio'>
+                    <p>Soy un músico y productor de la universidad ICESI de Cali, Colombia.
+Tengo más de 11 años de experiencia como cantante solista e integrante de agrupaciones corales. He trabajado como asistente en grabaciones de estudio, y actualmente proyecto mi carrera como compositor en el mundo del sonido para medios audiovisuales e interactivos.
+                    </p>
+                </div>
+
+            </article> }
+            
 
 
             <svg className='about__decor' width="450" height="250" viewBox="0 0 596 302" fill="none" xmlns="http://www.w3.org/2000/svg">

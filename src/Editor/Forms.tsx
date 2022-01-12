@@ -7,10 +7,11 @@ import { ProjectElemProp } from '../Utils/ProjectElem';
 
 
 interface Forms {
-    onCreate: (newProject: { title: string, url: string, description: string, }) => void;
+    onCreate: (newProject: { title: string, url: string, description: string, cover:string }) => void;
+    onCreateImg: (newImg:{img:string})=>void;
 }
 
-export const Forms: React.FC<Forms> = ({onCreate}) => {
+export const Forms: React.FC<Forms> = ({onCreate,onCreateImg}) => {
 
     const [formSubmitted, setFormSubmitted] = React.useState(false);
 
@@ -29,6 +30,15 @@ export const Forms: React.FC<Forms> = ({onCreate}) => {
         setUrl(event.target.value);
     }
 
+    const [cover, setCover] = React.useState('');
+    const handleCoverChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+        setCover(event.target.value);
+    }
+    const [img, setImg] = React.useState('');
+    const handleImgChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+        setImg(event.target.value);
+    }
+
 
 
     const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event: any) => {
@@ -42,12 +52,35 @@ export const Forms: React.FC<Forms> = ({onCreate}) => {
             title: title,
             description: description,
             url: url,
+            cover: cover,
         });
       
         onCreate({
             title: title,
             description: description,
             url: url,
+            cover: cover,
+
+        });
+
+
+    }
+
+    const handleSubmitImg: React.FormEventHandler<HTMLFormElement> = (event: any) => {
+        event.preventDefault();
+        
+
+          const projectList = ref(db, 'images');
+          const newProjectRef2 = push(projectList);
+          
+          set(newProjectRef2, {
+            img: img,
+            
+        });
+      
+        onCreateImg({
+            img: img,
+            
 
         });
 
@@ -82,11 +115,25 @@ return (
                 onChange={handleUrlChange}
                 value={url} />
 
-                <button>Upload</button>
+                <label>COVER</label>
+                <input type="text"
+                onChange={handleCoverChange}
+                value={cover} />
+
+                <button>Upload Project</button>
             </form>
 
-            <form>
-                <h2>Agregar Foto</h2>
+
+            {/* Form images */}
+
+            <form onSubmit={handleSubmitImg}>
+                <label>Agregar Foto URL</label>
+
+                <input type="text"
+                onChange={handleImgChange}
+                value={img} />
+                
+                <button>Upload Image</button>
                 
             </form>
         </section >

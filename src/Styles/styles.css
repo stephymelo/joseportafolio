@@ -161,6 +161,13 @@ li:hover a {
   height: 300px;
 }
 
+.language {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 .banner {
   width: 100%;
   min-height: 150vh;
@@ -471,10 +478,72 @@ li:hover a {
   background: transparent;
 }
 
+.gallery {
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../Resources/Images/galleryBg.png");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.gallery--1 {
+  padding-top: 10em;
+  padding-left: 10em;
+}
+
+.gallery--1 hr {
+  color: white;
+  width: 100%;
+}
+
+.gallery--2 {
+  margin-top: 3em;
+  margin-left: 6em;
+  margin-bottom: 3em;
+  width: 80%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.1em;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery--2 ::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.gallery--2 .fotosElem .image {
+  width: 320px;
+  height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .contact {
   width: 100%;
   min-height: 60vh;
   max-height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-image: url("../Resources/Images/contactBg.png");
   background-size: cover;

@@ -12,55 +12,36 @@ import { Navigation } from './Components/Navigation';
 import { Forms } from './Editor/Forms';
 import Login from './Editor/Login';
 import './Styles/styles.css';
-import ProjectElem from './Utils/ProjectElem';
 import { Gallery } from './Components/Gallery';
-import { ProjectProp } from './Utils/ProjectProp';
 import Database from './Utils/Database';
-import { onValue, ref } from '@firebase/database';
-import { db } from './Utils/ApiFirebase';
 import { Work } from './Components/Work';
 import { Contact } from './Components/Contact';
+import { Language } from './Components/Language';
 
 
 
 function App() {
+  const [ languageType, setLanguageType ] = React.useState<'english' | 'spanish'>('english');
 
-  console.log(Database);
+  const handleLanguage = (onEditLan: string) => {
+    if(onEditLan === 'spanish'){
+      setLanguageType('spanish');
+   
+    }else{
+      setLanguageType('english');
 
-
-
-
-
-  //setNewArray(list)
-  // const [projectElems, setProjectElems] = React.useState<ProjectElemProp[]>([
-
-  //   {
-  //     id: "0",
-  //     title: 'titulo',
-  //     url: 'https://soundcloud.com/glennmorrison/beethoven-moonlight-sonata',
-  //     description: 'yeahwatever',
-
-  //   },
-  // ])
+    }
+  }
 
 
-
-  // const [projectElems, setProjectElems] = useState<ProjectProp[]>(newArray) ;
-
-
+// console.log(Database);
 
   const handleCreate = (newProjectElem: { title: string, url: string, description: string }) => {
-    // const newProjects = [
-    //   ...projectElems,
-    //   {
-    //     id: Math.random().toString(),
-    //     title: newProjectElem.title,
-    //     url: newProjectElem.url,
-    //     description: newProjectElem.description,
+  
+  }
 
-    //   }
-    // ];
-    // setProjectElems(newProjects);
+  const handleCreateImg = (newImgElem:{img:string})=>{
+    
   }
 
 
@@ -69,34 +50,22 @@ function App() {
   return (
     <section className="app">
 
-
-
       <HashRouter>
         {/* <button onClick={handleAdmin}></button> */}
         <Link className='hiddenLogin' to={"login"}><button className='hiddenLoginBtn'>Login</button></Link>
         <Routes>
           <Route path='' element={
             <>
+              <Language onEditLan={handleLanguage} type={languageType}></Language>
               <Navigation />
               <Banner />
-              <About />
+             
+              <About type={languageType}/>
               <Work />
+              <Gallery/>
               <Contact/>
-
-
-
-
-              {/* <Gallery
-                list={ProjectElem}
-              /> */}
-
-
-
-
-
-
-
-
+              
+     
             </>
           }></Route>
 
@@ -112,7 +81,7 @@ function App() {
 
 
           <Route path='forms' element={<>
-            <Forms onCreate={handleCreate} />
+            <Forms onCreate={handleCreate} onCreateImg={handleCreateImg} />
             <Link to={"/"}><button>Home</button></Link>
           </>}></Route>
 

@@ -52,13 +52,10 @@ export const Work: React.FC<Work> = () => {
 
 
 
-    const indicatorStyles: CSSProperties = {
-        display: 'none',
-        
-    };
 
     const arrowStyleL: CSSProperties = {
-        display: 'none',
+       
+       
         margin: '0 80 0 0px',
         position: 'absolute',
         zIndex: 2,
@@ -87,7 +84,7 @@ export const Work: React.FC<Work> = () => {
             </article>
 
 
-            <Carousel infiniteLoop={true} dynamicHeight={true} showThumbs={false} className='work__carousel'
+            <Carousel infiniteLoop={false} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false}  className='work__carousel'
                 renderArrowPrev={(onClickHandler, hasPrev, label) =>
                     hasPrev && (
                         <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>
@@ -103,18 +100,6 @@ export const Work: React.FC<Work> = () => {
                         </button>
                     )
                 }
-
-                renderIndicator={() => {
-                    return (
-                        <li
-                            style={indicatorStyles}
-                        />
-                    );
-                }}
-
-                
-
-
             >
                 {newArray.map((elem) => {
                     return <ProjectElem key={elem.id} {...elem}
