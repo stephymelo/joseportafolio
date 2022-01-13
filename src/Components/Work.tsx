@@ -75,8 +75,26 @@ export const Work: React.FC<Work> = ({ type }) => {
         cursor: 'pointer',
     };
 
+
+
+    
+    const [autoplay, setAutoplay] = React.useState(true)
+
+    const onClickItem = ()=>{
+        setAutoplay(current => !current);
+        console.log(autoplay);
+
+    }
+
+    useEffect( () => {
+    }, [autoplay]);
+
+  
+
+   
     return (
         <section className='work'>
+            
 
             {type === 'english' && <article className='work__titles'>
                 <h2 className='title'>WORK</h2>
@@ -89,7 +107,7 @@ export const Work: React.FC<Work> = ({ type }) => {
             </article>}
 
 
-            {type === 'english' && <Carousel infiniteLoop={false} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false} className='work__carousel'
+            {type === 'english' && <Carousel autoPlay={autoplay} interval={2000} infiniteLoop={true} showThumbs={false} dynamicHeight={false} selectedItem={0} showIndicators={false} className='work__carousel' onClickItem={onClickItem}
                 renderArrowPrev={(onClickHandler, hasPrev, label) =>
                     hasPrev && (
                         <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>
@@ -114,7 +132,7 @@ export const Work: React.FC<Work> = ({ type }) => {
 
             {/* SPANISH CAROUSEL */}
 
-            {type === 'spanish' && <Carousel infiniteLoop={false} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false} className='work__carousel'
+            {type === 'spanish' && <Carousel autoPlay={true} infiniteLoop={true} showThumbs={true} dynamicHeight={true} selectedItem={1} showIndicators={false} className='work__carousel' 
                 renderArrowPrev={(onClickHandler, hasPrev, label) =>
                     hasPrev && (
                         <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>

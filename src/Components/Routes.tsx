@@ -47,7 +47,7 @@ export const Routess: React.FC<Routes> = () => {
       
     }
     return (
-<section className='Routes'>
+<section className='routes'>
 
 <HashRouter>
         {/* <button onClick={handleAdmin}></button> */}

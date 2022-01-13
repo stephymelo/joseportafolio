@@ -81,10 +81,113 @@
     }
 
     &__photo {
-        width: 50%;
+        width: 60%;
         right: -100px;
         bottom: 0px;
         justify-content: baseline;
         position: absolute;
     }
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .about {
+        width: 100%;
+        min-height: 90vh;
+        max-height: 100%;
+        background-repeat: no-repeat;
+        background-image: url("../Resources/Images/aboutbg.png");
+        background-size: cover;
+        position: relative;
+    
+        &__info {
+            
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+            padding-top: 4rem;
+    
+            &__title {
+                z-index: 1;
+    
+                .name{
+                    font-size: 25px;
+    
+                }
+                .title2 {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top:1rem;
+    
+                    .and{
+                        font-size: 50px;
+                        -webkit-text-fill-color: rgba(255, 0, 0, 0);;
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: $secondary;
+                        padding-left:0.4rem;
+                    }
+    
+                    .composer{
+                        font-size: 25px;
+                        margin-left:1.2rem;
+                        margin-top:0.7rem;
+                    }
+                }
+            }
+    
+            h3{
+                z-index: 1;
+                margin-top:2rem;
+                font-weight: 600;
+                color:$secondary;
+                margin-left:1.5rem;
+            }
+    
+            &__bio {
+                z-index: 1;
+                margin-top: 2rem;
+                border-style: solid;
+                border-width: 1.5px;
+                color: white;
+                width: 90%;
+    
+                p {
+                    padding: 1.5rem;
+                }
+            }
+        }
+    
+        &__decor {
+            overflow: hidden;
+            overflow-y: auto;
+            perspective: 3px;
+            animation: fadein 800ms 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            right: -170px;
+            top: 500px;
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            position: absolute;
+        }
+    
+        @keyframes floating {
+            0% { transform: translate(0,  0px); }
+            50%  { transform: translate(0, 6px); }
+            100%   { transform: translate(0, -0px); }   
+        }
+    
+        &__photo {
+            
+            width: 90%;
+            right: -50px;
+            bottom: -30px;
+            justify-content: baseline;
+            position: relative;
+        }
+    }
+    
+    
+
 }
