@@ -23,6 +23,7 @@
         }
 
         &--2 {
+                position: relative;
                 z-index: 1;
                 margin-top: 3em;
                 margin-left: 6em;
@@ -45,6 +46,12 @@
                                 background-position: center;
                                 background-repeat: no-repeat;
                                 background-size: contain;
+                                transition: 1s;
+
+                                &:hover {
+                                        transform:scale(1.2, 1.2);
+                                        filter: drop-shadow(6px 5px 8px rgb(14, 14, 14));
+                                    }
                         }
                 }
         }

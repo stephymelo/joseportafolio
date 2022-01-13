@@ -44,7 +44,7 @@ export const Gallery: React.FC<GalleryProps> = ({ type }) => {
         <section className='gallery'>
             <article className='gallery--1'>
                 {type === 'english' && <h2>GALLERY</h2>}
-                {type === 'spanish' && <h2>GALLERIA</h2>}
+                {type === 'spanish' && <h2>GALERIA</h2>}
                 <hr></hr>
             </article>
 

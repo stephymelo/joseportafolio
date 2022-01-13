@@ -7,7 +7,7 @@ import { ProjectElemProp } from '../Utils/ProjectElem';
 
 
 interface Forms {
-    onCreate: (newProject: { title: string, url: string, description: string, cover: string }) => void;
+    onCreate: (newProject: { title: string, url: string, description: string, descripSpanish:string, cover: string }) => void;
     onCreateImg: (newImg: { img: string }) => void;
 }
 
@@ -55,6 +55,7 @@ export const Forms: React.FC<Forms> = ({ onCreate, onCreateImg }) => {
         set(newProjectRef, {
             title: title,
             description: description,
+            descripSpanish: descripSpanish,
             url: url,
             cover: cover,
         });
@@ -62,6 +63,7 @@ export const Forms: React.FC<Forms> = ({ onCreate, onCreateImg }) => {
         onCreate({
             title: title,
             description: description,
+            descripSpanish: descripSpanish,
             url: url,
             cover: cover,
 
@@ -116,7 +118,7 @@ export const Forms: React.FC<Forms> = ({ onCreate, onCreateImg }) => {
                 <label>Description Spanish</label>
                 <textarea className="descripInput" rows={4} cols={50}
                     onChange={handleDescripSpanishChange}
-                    value={description} />
+                    value={descripSpanish} />
 
 
                 <label>URL</label>

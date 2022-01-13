@@ -15,6 +15,8 @@ export type FotosElemProp = FotosProp & {
 
 const FotosElem: React.FC<FotosElemProp> = ({ id, img }) => {
 
+    
+
    
 
 
