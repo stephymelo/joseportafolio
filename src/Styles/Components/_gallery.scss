@@ -9,25 +9,23 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items:flex-start;
+        align-items: flex-start;
         position: relative;
 
+        &--1 {
+                padding-top: 10em;
+                padding-left: 10em;
 
-        &--1{
-
-                padding-top:10em;
-                padding-left:10em;
-
-                hr{
+                hr {
                         color: white;
-                        width:100%;
+                        width: 100%;
                 }
         }
 
         &--2 {
                 z-index: 1;
-                margin-top:3em;
-                margin-left:6em;
+                margin-top: 3em;
+                margin-left: 6em;
                 margin-bottom: 3em;
                 width: 80%;
                 height: 100%;
@@ -36,13 +34,11 @@
                 grid-gap: 0.1em;
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 align-items: center;
-                ::-webkit-scrollbar{
+                ::-webkit-scrollbar {
                         width: 0.5em;
                 }
 
                 .fotosElem {
-                      
-
                         .image {
                                 width: 320px;
                                 height: 320px;
@@ -54,7 +50,6 @@
         }
 
         &__decor {
-             
                 overflow: hidden;
                 overflow-y: auto;
                 perspective: 3px;
@@ -66,16 +61,21 @@
                 animation-iteration-count: infinite;
                 animation-timing-function: ease-in-out;
                 position: absolute;
-            }
-        
-            @keyframes floating {
-                0% { transform: translate(0,  0px); }
-                50%  { transform: translate(0, 6px); }
-                100%   { transform: translate(0, -0px); }   
-            }
-        
-            &__decor2 {
-             
+        }
+
+        @keyframes floating {
+                0% {
+                        transform: translate(0, 0px);
+                }
+                50% {
+                        transform: translate(0, 6px);
+                }
+                100% {
+                        transform: translate(0, -0px);
+                }
+        }
+
+        &__decor2 {
                 overflow: hidden;
                 overflow-y: auto;
                 perspective: 3px;
@@ -87,11 +87,131 @@
                 animation-iteration-count: infinite;
                 animation-timing-function: ease-in-out;
                 position: absolute;
-            }
-        
-            @keyframes floating {
-                0% { transform: translate(0,  0px); }
-                50%  { transform: translate(0, 6px); }
-                100%   { transform: translate(0, -0px); }   
-            }
+        }
+
+        @keyframes floating {
+                0% {
+                        transform: translate(0, 0px);
+                }
+                50% {
+                        transform: translate(0, 6px);
+                }
+                100% {
+                        transform: translate(0, -0px);
+                }
+        }
+}
+
+@media screen and (max-width: 700px) {
+        .gallery {
+                width: 100%;
+                min-height: 100vh;
+                max-height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("../Resources/Images/galleryBg.png");
+                background-size: 100% 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                // overflow: scroll;
+
+                &--1 {
+                        z-index: 1;
+                        padding-top: 1em;
+                        padding-left: 2em;
+
+                        hr {
+                                color: white;
+                                width: 100%;
+                        }
+                }
+
+                &--2 {
+                        z-index: 1;
+                        margin-top: 6em;
+                        margin-left: 2em;
+                        margin-bottom: 3em;
+                        width: 80%;
+                        height: 100%;
+                      
+                        display: flex;
+                        flex-direction: row;
+                        overflow: scroll;
+                        align-items: center;
+                        ::-webkit-scrollbar {
+                                width: 0.5em;
+                        }
+
+                        .fotosElem {
+                                padding-left:1.2em;
+                                .image {
+                                        width: 220px;
+                                        height: 220px;
+                                        background-position:center;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                }
+                        }
+                }
+
+                &__decor {
+                      
+                        width:300px;
+                        height:300px;
+                        overflow: hidden;
+                        overflow-y: auto;
+                        perspective: 3px;
+                        animation: fadein 800ms 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+                        right: -100px;
+                        top: 0px;
+                        animation-name: floating;
+                        animation-duration: 3s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: ease-in-out;
+                        position: absolute;
+                }
+
+                @keyframes floating {
+                        0% {
+                                transform: translate(0, 0px);
+                        }
+                        50% {
+                                transform: translate(0, 6px);
+                        }
+                        100% {
+                                transform: translate(0, -0px);
+                        }
+                }
+
+                &__decor2 {
+                        display: none;
+
+                        overflow: hidden;
+                        overflow-y: auto;
+                        perspective: 3px;
+                        animation: fadein 800ms 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+                        left: 0px;
+                        bottom: 20px;
+                        animation-name: floating;
+                        animation-duration: 3s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: ease-in-out;
+                        position: absolute;
+                }
+
+                @keyframes floating {
+                        0% {
+                                transform: translate(0, 0px);
+                        }
+                        50% {
+                                transform: translate(0, 6px);
+                        }
+                        100% {
+                                transform: translate(0, -0px);
+                        }
+                }
+        }
 }

@@ -1,12 +1,19 @@
-ul {
+.ulNav {
     margin-top: 2em;
     margin-left: 2em;
     display: flex;
     flex-direction: row;
     position: fixed;
     z-index: 1;
+   
 }
-
+.normalNav{
+    display: block;
+    z-index: 2;
+}
+.burgerNav{
+    display: none;
+}
 li {
     cursor:pointer;
     margin-left: 40px;
@@ -40,5 +47,45 @@ li {
     }
     &:hover a {
         color: $secondary;
+    }
+}
+.burgerMenu{
+    display: none;
+}
+@media screen and (max-width: 700px) {
+
+    .normalNav{
+        display: none;
+    }
+
+    .burgerNav{
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        display: block;
+    }
+    .ulBurger{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top:10px;
+        left:0px;
+        margin-left:0.1em;
+        margin-top:3em;
+
+       
+    }
+
+    li{
+        margin-top:0.4em;
+    }
+    .burgerMenu{
+        position: fixed;
+        width:5%;
+        display: block;
+        margin-left:2em;
+        margin-top:1em;
+        z-index: 1;
     }
 }
