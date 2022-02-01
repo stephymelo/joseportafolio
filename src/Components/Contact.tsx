@@ -18,9 +18,9 @@ export const Contact: React.FC<Contact> = () => {
 
             <article className='contact--2'>
                 <ol>
-                    <li> <a href="https://www.instagram.com/polyphonic_ezog/?hl=es-la"><img src={insta} /></a> </li>
-                    <li><a href="  https://www.youtube.com/channel/UC_z3NVTTaLrFPIMz7bLDesg"><img src={you} /></a></li>
-                    <li><a href="  mailto:jose.tamayog@hotmail.com"><img src={mail} /></a></li>
+                    <li><a target='_blank' href="https://www.instagram.com/polyphonic_ezog/?hl=es-la"><img src={insta} /></a> </li>
+                    <li><a target='_blank' href="  https://www.youtube.com/channel/UC_z3NVTTaLrFPIMz7bLDesg"><img src={you} /></a></li>
+                    <li><a target='_blank' href="  mailto:jose.tamayog@hotmail.com"><img src={mail} /></a></li>
 
                 </ol>
 
