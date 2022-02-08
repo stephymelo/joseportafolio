@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +12,6 @@ import { Navigation } from './Navigation';
 import { Forms } from '../Editor/Forms';
 import Login from '../Editor/Login';
 import { Gallery } from './Gallery';
-import Database from '../Utils/Database';
 import { Work } from './Work';
 import { Contact } from './Contact';
 import { Language } from './Language';

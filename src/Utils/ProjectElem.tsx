@@ -29,7 +29,7 @@ const ProjectElem: React.FC<ProjectElemProp> = ({ id, title, url, description,de
             <article className='projectElem__article'>
            
                 <article className='projectElem__article--1'>
-                    <ReactPlayer className= 'player' width={width} height={height} url={url} controls={true} light={cover} onPlay= {() => makeFullscreen()}/> 
+                    <ReactPlayer className= 'player' width={width} height={height} url={url} controls={true} light={cover} origin='http://localhost:3001' onPlay= {() => makeFullscreen()}/> 
                 </article>
 
                 <article className='projectElem__article--2'>

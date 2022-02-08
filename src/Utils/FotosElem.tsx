@@ -1,10 +1,5 @@
-import React, { Fragment, useEffect, useState, CSSProperties } from 'react';
+import React from 'react';
 import { FotosProp } from './FotosProp';
-import { render } from 'react-dom';
-import { onValue, ref } from '@firebase/database';
-import { db } from '../Utils/ApiFirebase';
-
-
 
 
 

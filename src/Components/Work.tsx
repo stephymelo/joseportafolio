@@ -55,13 +55,14 @@ export const Work: React.FC<Work> = ({ type }) => {
     const arrowStyleL: CSSProperties = {
 
 
-        margin: '0 80 0 0px',
+        margin: '0 80 80 0px',
         position: 'absolute',
         zIndex: 2,
         top: 'calc(40% - 15px)',
         width: 50,
         height: 50,
         cursor: 'pointer',
+        
     };
     const arrowStyleR: CSSProperties = {
 
@@ -110,7 +111,7 @@ export const Work: React.FC<Work> = ({ type }) => {
             {type === 'english' && <Carousel autoPlay={autoplay} interval={2000} infiniteLoop={true} showThumbs={false} dynamicHeight={false} selectedItem={0} showIndicators={false} className='work__carousel' onClickItem={onClickItem}
                 renderArrowPrev={(onClickHandler, hasPrev, label) =>
                     hasPrev && (
-                        <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 15 }}>
+                        <button className='arrowCarrousel' type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyleL, left: 0 }}>
                             <img src={arrowLeft} />
                         </button>
                     )

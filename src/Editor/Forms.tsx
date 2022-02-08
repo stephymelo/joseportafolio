@@ -1,7 +1,6 @@
-import { onValue, push, ref, set } from '@firebase/database';
+import {  push, ref, set } from '@firebase/database';
 import * as React from 'react';
-import { db, database, firebase, todosRef } from '../Utils/ApiFirebase';
-import { ProjectElemProp } from '../Utils/ProjectElem';
+import { db} from '../Utils/ApiFirebase';
 
 
 
