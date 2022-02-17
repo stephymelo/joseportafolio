@@ -306,7 +306,7 @@ li:hover a {
 
 .banner {
   width: 100%;
-  min-height: 150vh;
+  min-height: 100vh;
   max-height: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -386,12 +386,11 @@ li:hover a {
 @media screen and (max-width: 700px) {
   .banner {
     width: 100%;
-    min-height: 100vh;
+    min-height: 40vh;
     max-height: 100%;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../Resources/Images/joseBannerEdit.jpg");
+    background-image: url("../Resources/Images/joseBannerEditcopy.jpg");
     background-size: cover;
   }
 }
@@ -401,7 +400,7 @@ li:hover a {
   min-height: 100vh;
   max-height: 100%;
   background-repeat: no-repeat;
-  background-image: url("../Resources/Images/aboutbg.png");
+  background-image: url("../Resources/Images/aboutbg.jpg");
   background-size: cover;
   position: relative;
 }
@@ -532,7 +531,7 @@ li:hover a {
     min-height: 90vh;
     max-height: 100%;
     background-repeat: no-repeat;
-    background-image: url("../Resources/Images/aboutbg.png");
+    background-image: url("../Resources/Images/aboutbg.jpg");
     background-size: cover;
     position: relative;
   }
@@ -657,7 +656,7 @@ li:hover a {
   max-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../Resources/Images/workBg.png");
+  background-image: url("../Resources/Images/workBg.jpg");
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -901,7 +900,7 @@ li:hover a {
   max-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../Resources/Images/galleryBg.png");
+  background-image: url("../Resources/Images/galleryBg.jpg");
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1045,7 +1044,7 @@ li:hover a {
     max-height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../Resources/Images/galleryBg.png");
+    background-image: url("../Resources/Images/galleryBg.jpg");
     background-size: 100% 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1194,7 +1193,7 @@ li:hover a {
   max-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../Resources/Images/contactBg.png");
+  background-image: url("../Resources/Images/contactBg.jpg");
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1289,7 +1288,7 @@ li:hover a {
     max-height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../Resources/Images/contactBg.png");
+    background-image: url("../Resources/Images/contactBg.jpg");
     background-size: cover;
     display: -webkit-box;
     display: -ms-flexbox;
