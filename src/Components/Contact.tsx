@@ -34,7 +34,7 @@ export const Contact: React.FC<Contact> = () => {
 
             <article className='contact--3'>
                 <p className='title'>Polyphonic Ezog</p>
-                <p className='subtitle'>All rights reserved 2022</p>
+                <p className='subtitle'>All rights reserved 2025</p>
             </article>
 
         </section>
