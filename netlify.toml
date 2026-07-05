@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # react-scripts 3.x uses webpack 4, which relies on an OpenSSL hash that was
+  # removed in Node 17+. Without this flag the build fails on Node 22 with
+  # ERR_OSSL_EVP_UNSUPPORTED. Remove it if react-scripts is upgraded to v5+.
+  NODE_OPTIONS = "--openssl-legacy-provider"
+
+# SPA fallback so client-side routes resolve to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
