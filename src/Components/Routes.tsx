@@ -11,7 +11,9 @@ import { Banner } from './Banner';
 import { Navigation } from './Navigation';
 import { Forms } from '../Editor/Forms';
 import Login from '../Editor/Login';
-import { Gallery } from './Gallery';
+// Gallery hidden: photos lived in Firebase Storage, which Google deleted for
+// free-plan projects (Sept 2024). Re-add the import/usage below once photos exist.
+// import { Gallery } from './Gallery';
 import { Work } from './Work';
 import { Contact } from './Contact';
 import { Language } from './Language';
@@ -60,7 +62,7 @@ export const Routess: React.FC<Routes> = () => {
               <Banner />
               <About type={languageType}/>
               <Work type={languageType}  />
-              <Gallery type={languageType} />
+              {/* <Gallery type={languageType} /> */}
               <Contact/>
               
      
